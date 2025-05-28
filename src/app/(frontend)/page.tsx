@@ -1,5 +1,11 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+import PartnersSlider from '@/components/MainPage/PartnersSlider'
 
-export default PageTemplate
+const MainPage = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      <PartnersSlider />
+    </div>
+  )
+}
 
-export { generateMetadata }
+export default MainPage
