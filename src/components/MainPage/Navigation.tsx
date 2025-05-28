@@ -77,7 +77,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center">
             <div className="h-16 md:h-20">
               <img 
-                src="/lovable-uploads/a930fab9-b5eb-459b-8b59-b525526f0d72.png" 
+                src="/enic.png" 
                 alt="ENIC Kazakhstan Logo" 
                 className="h-16 md:h-20 w-auto"
               />
