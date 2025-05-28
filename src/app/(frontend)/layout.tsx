@@ -7,14 +7,14 @@ import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
 import Footer from '@/components/MainPage/footer'
-import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
-import './globals.css'
+import Navigation from '@/components/MainPage/Navigation'
 import { getServerSideURL } from '@/utilities/getURL'
+import './globals.css'
 import LocaleLayout from './locale-layout'
 
 export default async function RootLayout({
@@ -41,7 +41,7 @@ export default async function RootLayout({
             }}
           />
 
-          <Header />
+          <Navigation />
           <LocaleLayout params={params}>{children}</LocaleLayout>
           <Footer />
         </Providers>
