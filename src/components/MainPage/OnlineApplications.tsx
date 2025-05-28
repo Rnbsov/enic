@@ -1,4 +1,4 @@
-
+'use client'
 import React, { useState } from 'react';
 import { FileText, Upload, Clock, CheckCircle, Paperclip, X } from 'lucide-react';
 

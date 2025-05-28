@@ -1,4 +1,4 @@
-
+'use client'
 import React, { useState } from 'react';
 import { Calculator, Info } from 'lucide-react';
 
