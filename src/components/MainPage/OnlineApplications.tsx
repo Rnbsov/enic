@@ -1,0 +1,194 @@
+
+import React, { useState } from 'react';
+import { FileText, Upload, Clock, CheckCircle, Paperclip, X } from 'lucide-react';
+
+const OnlineApplications = () => {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [selectedApplication, setSelectedApplication] = useState<string | null>(null);
+
+  const applicationTypes = [
+    {
+      id: 'diploma-recognition',
+      title: 'Заявление на признание диплома',
+      description: 'Подача заявления на признание документа об образовании',
+      icon: FileText,
+      status: 'available'
+    },
+    {
+      id: 'program-accreditation',
+      title: 'Заявление на аккредитацию ОП',
+      description: 'Подача заявления на аккредитацию образовательной программы',
+      icon: CheckCircle,
+      status: 'available'
+    },
+    {
+      id: 'status-inquiry',
+      title: 'Справка о статусе заявления',
+      description: 'Получение информации о ходе рассмотрения заявления',
+      icon: Clock,
+      status: 'available'
+    }
+  ];
+
+  const steps = [
+    { step: 1, title: 'Выберите тип заявления', description: 'Определите необходимую услугу' },
+    { step: 2, title: 'Заполните форму', description: 'Укажите все необходимые данные' },
+    { step: 3, title: 'Приложите документы', description: 'Загрузите сканы документов' },
+    { step: 4, title: 'Отправьте заявление', description: 'Получите номер для отслеживания' }
+  ];
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    setSelectedFiles(prev => [...prev, ...files]);
+  };
+
+  const removeFile = (index: number) => {
+    setSelectedFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const handleApplicationClick = (appId: string) => {
+    setSelectedApplication(appId);
+  };
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Онлайн-заявления</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Подавайте заявления и отслеживайте их статус в удобном онлайн-режиме
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Application Types */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-6">Доступные заявления</h3>
+            <div className="space-y-4">
+              {applicationTypes.map((app) => (
+                <div 
+                  key={app.id} 
+                  className={`bg-white p-6 rounded-xl shadow-sm border transition-all duration-300 cursor-pointer group ${
+                    selectedApplication === app.id 
+                      ? 'border-brand-blue-500 shadow-md ring-2 ring-brand-blue-100' 
+                      : 'border-gray-100 hover:shadow-md'
+                  }`}
+                  onClick={() => handleApplicationClick(app.id)}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className={`p-3 rounded-lg transition-colors duration-300 ${
+                      selectedApplication === app.id 
+                        ? 'bg-brand-blue-500 text-white' 
+                        : 'bg-brand-blue-100 text-brand-blue-600 group-hover:bg-brand-blue-200'
+                    }`}>
+                      <app.icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-medium text-gray-800 mb-2">{app.title}</h4>
+                      <p className="text-sm text-gray-600 mb-3">{app.description}</p>
+                      {selectedApplication === app.id ? (
+                        <span className="text-brand-blue-600 font-medium text-sm">
+                          Выбрано ✓
+                        </span>
+                      ) : (
+                        <button className="text-brand-blue-600 hover:text-brand-blue-700 font-medium text-sm">
+                          Выбрать заявление →
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* File Upload Section */}
+            {selectedApplication && (
+              <div className="mt-8 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h4 className="font-medium text-gray-800 mb-4 flex items-center">
+                  <Paperclip className="w-5 h-5 mr-2 text-brand-blue-600" />
+                  Прикрепить документы
+                </h4>
+                
+                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-brand-blue-400 transition-colors duration-200">
+                  <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                  <label className="cursor-pointer">
+                    <span className="text-brand-blue-600 hover:text-brand-blue-700 font-medium">
+                      Нажмите для загрузки файлов
+                    </span>
+                    <span className="text-gray-500 block text-sm mt-1">
+                      или перетащите файлы сюда
+                    </span>
+                    <input
+                      type="file"
+                      multiple
+                      accept=".pdf,.jpg,.jpeg,.png"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+
+                {/* Selected Files List */}
+                {selectedFiles.length > 0 && (
+                  <div className="mt-4 space-y-2">
+                    <h5 className="font-medium text-gray-700 text-sm">Загруженные файлы:</h5>
+                    {selectedFiles.map((file, index) => (
+                      <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                        <div className="flex items-center space-x-2">
+                          <FileText className="w-4 h-4 text-gray-500" />
+                          <span className="text-sm text-gray-700 truncate">{file.name}</span>
+                          <span className="text-xs text-gray-500">({Math.round(file.size / 1024)} KB)</span>
+                        </div>
+                        <button
+                          onClick={() => removeFile(index)}
+                          className="text-red-500 hover:text-red-700 p-1"
+                          title="Удалить файл"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <button className="w-full mt-6 bg-brand-blue-600 text-white py-3 px-6 rounded-lg hover:bg-brand-blue-700 transition-colors duration-200 font-medium">
+                  Подать заявление
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Process Steps */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-6">Как подать заявление</h3>
+            <div className="space-y-6">
+              {steps.map((step, index) => (
+                <div key={step.step} className="flex items-start space-x-4">
+                  <div className="bg-brand-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm flex-shrink-0">
+                    {step.step}
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-800 mb-1">{step.title}</h4>
+                    <p className="text-sm text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 bg-brand-light-blue-50 rounded-xl border border-brand-light-blue-200">
+              <h4 className="font-medium text-brand-blue-800 mb-2">Требования к документам</h4>
+              <ul className="text-sm text-brand-blue-700 space-y-1">
+                <li>• Формат файлов: PDF, JPG, PNG</li>
+                <li>• Максимальный размер: 10 МБ</li>
+                <li>• Качество сканирования: 300 DPI</li>
+                <li>• Документы должны быть читаемыми</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OnlineApplications;
