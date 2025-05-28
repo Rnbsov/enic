@@ -18,6 +18,7 @@ import './globals.css'
 import LocaleLayout from './locale-layout'
 import Breadcrumbs from '@/components/MainPage/Breadcrumbs'
 import AccessibilityToggle from '@/components/MainPage/AccessibilityToggle'
+import ChatbotWidget from '@/components/MainPage/ChatbotWidget'
 
 export default async function RootLayout({
   children,
@@ -49,6 +50,7 @@ export default async function RootLayout({
 
           <LocaleLayout params={params}>{children}</LocaleLayout>
           <Footer />
+          <ChatbotWidget />
         </Providers>
       </body>
     </html>
