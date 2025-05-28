@@ -21,7 +21,7 @@ const Footer = () => {
                     alt="ENIC Kazakhstan Logo"
                     height={64}
                     width={144}
-                    className="w-auto bg-white p-2 rounded"
+                    className="bg-white p-2 rounded"
                   />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">ENIC Kazakhstan</h4>
