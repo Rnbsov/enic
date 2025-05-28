@@ -109,6 +109,14 @@ const Navigation = () => {
             ))}
           </div>
 
+          <div className="hidden lg:block h-16 md:h-20">
+              <img 
+                src="/bolona.png" 
+                alt="Bolona" 
+                className="h-16 md:h-20 w-auto"
+              />
+            </div>
+
           {/* Mobile menu button with better touch target */}
           <button
             id="mobile-menu-button"
