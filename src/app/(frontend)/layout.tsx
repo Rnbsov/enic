@@ -15,8 +15,15 @@ import { draftMode } from 'next/headers'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import LocaleLayout from './locale-layout'
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
+}) {
   const { isEnabled } = await draftMode()
 
   return (
@@ -35,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
 
           <Header />
-          {children}
+          <LocaleLayout params={params}>{children}</LocaleLayout>
           <Footer />
         </Providers>
       </body>
