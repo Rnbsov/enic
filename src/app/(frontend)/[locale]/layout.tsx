@@ -14,7 +14,7 @@ import { draftMode } from 'next/headers'
 
 import Navigation from '@/components/MainPage/Navigation'
 import { getServerSideURL } from '@/utilities/getURL'
-import './globals.css'
+import '../globals.css'
 import LocaleLayout from './locale-layout'
 import Breadcrumbs from '@/components/MainPage/Breadcrumbs'
 import AccessibilityToggle from '@/components/MainPage/AccessibilityToggle'
