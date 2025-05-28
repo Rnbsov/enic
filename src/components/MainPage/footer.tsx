@@ -19,8 +19,9 @@ const Footer = () => {
                   <Image
                     src="/enic.png"
                     alt="ENIC Kazakhstan Logo"
-                    fill
-                    className="h-16 w-auto bg-white p-2 rounded"
+                    height={64}
+                    width={144}
+                    className="w-auto bg-white p-2 rounded"
                   />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">ENIC Kazakhstan</h4>
