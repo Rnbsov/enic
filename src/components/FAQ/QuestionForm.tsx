@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useTranslations } from 'next-intl'
+import { User, Mail, MessageSquare, Send, AlertCircle, CheckCircle } from 'lucide-react'
 
 const QuestionForm: React.FC = () => {
   const t = useTranslations('faq')
@@ -52,26 +53,44 @@ const QuestionForm: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name">{t('yourName')}</Label>
-          <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+          <Label htmlFor="name" className="text-gray-700 font-medium flex items-center">
+            <User className="w-4 h-4 mr-2 text-brand-blue-500" />
+            {t('yourName')}
+          </Label>
+          <Input
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="rounded-lg bg-white border-gray-300 focus:border-brand-blue-500 focus:ring-brand-blue-500/20"
+            placeholder="Enter your name"
+          />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">{t('yourEmail')}</Label>
+          <Label htmlFor="email" className="text-gray-700 font-medium flex items-center">
+            <Mail className="w-4 h-4 mr-2 text-brand-blue-500" />
+            {t('yourEmail')}
+          </Label>
           <Input
             id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="rounded-lg bg-white border-gray-300 focus:border-brand-blue-500 focus:ring-brand-blue-500/20"
+            placeholder="Enter your email"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="question">{t('yourQuestion')}</Label>
+        <Label htmlFor="question" className="text-gray-700 font-medium flex items-center">
+          <MessageSquare className="w-4 h-4 mr-2 text-brand-blue-500" />
+          {t('yourQuestion')}
+        </Label>
         <Textarea
           id="question"
           value={content}
@@ -79,14 +98,31 @@ const QuestionForm: React.FC = () => {
           required
           rows={4}
           placeholder={t('questionPlaceholder')}
+          className="rounded-lg bg-white border-gray-300 focus:border-brand-blue-500 focus:ring-brand-blue-500/20"
         />
       </div>
 
-      {error && <div className="text-red-500">{error}</div>}
-      {success && <div className="text-green-500">{t('questionSubmitted')}</div>}
+      {error && (
+        <div className="flex items-center space-x-2 p-3 bg-red-50 text-red-700 rounded-lg bg-white border border-red-200">
+          <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+          <p className="text-sm">{error}</p>
+        </div>
+      )}
 
-      <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? t('submitting') : t('submitQuestion')}
+      {success && (
+        <div className="flex items-center space-x-2 p-3 bg-green-50 text-green-700 rounded-lg bg-white border border-green-200">
+          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+          <p className="text-sm">{t('questionSubmitted')}</p>
+        </div>
+      )}
+
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-brand-blue-600 hover:bg-brand-blue-700 text-white font-medium py-3 px-6 rounded-lg bg-white transition-colors duration-200 flex items-center justify-center space-x-2"
+      >
+        <Send className={`w-4 h-4 ${isSubmitting ? 'animate-pulse' : ''}`} />
+        <span>{isSubmitting ? t('submitting') : t('submitQuestion')}</span>
       </Button>
     </form>
   )
