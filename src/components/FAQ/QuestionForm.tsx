@@ -66,7 +66,7 @@ const QuestionForm: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
             required
             className="rounded-lg bg-white border-gray-300 focus:border-brand-blue-500 focus:ring-brand-blue-500/20"
-            placeholder="Enter your name"
+            placeholder={t('yourName')}
           />
         </div>
         <div className="space-y-2">
@@ -81,7 +81,7 @@ const QuestionForm: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="rounded-lg bg-white border-gray-300 focus:border-brand-blue-500 focus:ring-brand-blue-500/20"
-            placeholder="Enter your email"
+            placeholder={t('yourEmail')}
           />
         </div>
       </div>

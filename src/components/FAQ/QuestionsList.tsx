@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/accordion'
 import { formatDistance } from 'date-fns'
 import { MessageSquare, User, Calendar, ChevronDown } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 type Question = {
   id: string
@@ -25,14 +26,14 @@ type Props = {
 }
 
 const QuestionsList: React.FC<Props> = ({ questions }) => {
+  const t = useTranslations('faq')
+
   if (questions.length === 0) {
     return (
       <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
         <MessageSquare className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-        <h4 className="font-medium text-gray-700 mb-2">No Questions Yet</h4>
-        <p className="text-gray-500 text-sm">
-          Be the first to ask a question using the form.
-        </p>
+        <h4 className="font-medium text-gray-700 mb-2">{t('noQuestionsYet')}</h4>
+        <p className="text-gray-500 text-sm">{t('beFirstToAsk')}</p>
       </div>
     )
   }

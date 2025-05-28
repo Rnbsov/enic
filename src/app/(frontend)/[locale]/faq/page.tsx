@@ -5,14 +5,24 @@ import { Metadata } from 'next'
 import { HelpCircle, MessageSquare } from 'lucide-react'
 import QuestionForm from '@/components/FAQ/QuestionForm'
 import QuestionsList from '@/components/FAQ/QuestionsList'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
-  description: 'Find answers to common questions or ask your own',
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'faq' })
+
+  return {
+    title: t('pageTitle'),
+    description: t('pageDescription'),
+  }
 }
 
 export default async function FAQPage() {
   const payload = await getPayload({ config: configPromise })
+  const t = await getTranslations('faq')
 
   // Get all answered questions
   const { docs: questions } = await payload.find({
@@ -26,22 +36,20 @@ export default async function FAQPage() {
     depth: 1,
   })
 
-  // Define FAQ process steps
+  // Define FAQ process steps with translations
   const faqSteps = [
-    { step: 1, title: 'Ask a question', description: 'Submit your question using the form' },
-    { step: 2, title: 'Our team reviews it', description: 'Experts evaluate your inquiry' },
-    { step: 3, title: 'Get your answer', description: 'Find your answer in the FAQ section' },
-    { step: 4, title: 'Share feedback', description: 'Let us know if the answer was helpful' }
+    { step: 1, title: t('steps.step1.title'), description: t('steps.step1.description') },
+    { step: 2, title: t('steps.step2.title'), description: t('steps.step2.description') },
+    { step: 3, title: t('steps.step3.title'), description: t('steps.step3.description') },
+    { step: 4, title: t('steps.step4.title'), description: t('steps.step4.description') },
   ]
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions or submit your own inquiry. Our team is ready to help you with any questions about education recognition.
-          </p>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('pageTitle')}</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">{t('mainDescription')}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -51,7 +59,7 @@ export default async function FAQPage() {
               <div className="bg-brand-blue-600 text-white p-2 rounded-lg">
                 <MessageSquare className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">Answered Questions</h3>
+              <h3 className="text-xl font-semibold text-gray-800">{t('answeredQuestions')}</h3>
             </div>
             <QuestionsList questions={questions} />
           </div>
@@ -62,15 +70,15 @@ export default async function FAQPage() {
               <div className="bg-brand-blue-600 text-white p-2 rounded-lg">
                 <HelpCircle className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">Ask a Question</h3>
+              <h3 className="text-xl font-semibold text-gray-800">{t('askQuestion')}</h3>
             </div>
-            
+
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
               <QuestionForm />
             </div>
-            
+
             {/* Process Steps */}
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">How It Works</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-6">{t('howItWorks')}</h3>
             <div className="space-y-6">
               {faqSteps.map((step) => (
                 <div key={step.step} className="flex items-start space-x-4">
@@ -86,12 +94,12 @@ export default async function FAQPage() {
             </div>
 
             <div className="mt-8 p-6 bg-brand-light-blue-50 rounded-xl border border-brand-light-blue-200">
-              <h4 className="font-medium text-brand-blue-800 mb-2">Helpful Tips</h4>
+              <h4 className="font-medium text-brand-blue-800 mb-2">{t('helpfulTips')}</h4>
               <ul className="text-sm text-brand-blue-700 space-y-1">
-                <li>• Be specific in your question for faster responses</li>
-                <li>• Check existing questions before submitting</li>
-                <li>• Include relevant details about your situation</li>
-                <li>• Response time is typically 2-3 business days</li>
+                <li>• {t('tipSpecific')}</li>
+                <li>• {t('tipCheck')}</li>
+                <li>• {t('tipDetails')}</li>
+                <li>• {t('tipResponseTime')}</li>
               </ul>
             </div>
           </div>
