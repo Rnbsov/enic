@@ -16,6 +16,7 @@ import Navigation from '@/components/MainPage/Navigation'
 import { getServerSideURL } from '@/utilities/getURL'
 import './globals.css'
 import LocaleLayout from './locale-layout'
+import Breadcrumbs from '@/components/MainPage/Breadcrumbs'
 
 export default async function RootLayout({
   children,
@@ -42,6 +43,8 @@ export default async function RootLayout({
           />
 
           <Navigation />
+          <Breadcrumbs />
+
           <LocaleLayout params={params}>{children}</LocaleLayout>
           <Footer />
         </Providers>
