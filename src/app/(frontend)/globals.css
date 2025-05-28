@@ -101,3 +101,127 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+
+@layer utilities {
+  /* Enhanced Grid Pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Scroll Animations */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+
+  /* Professional Fade In */
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Professional Hover Effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* High Contrast Mode for Accessibility */
+.high-contrast {
+  filter: contrast(200%) saturate(0%);
+}
+
+.high-contrast * {
+  background-color: black !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.high-contrast a {
+  color: yellow !important;
+}
+
+.high-contrast button {
+  background-color: yellow !important;
+  color: black !important;
+  border: 2px solid white !important;
+}
+
+.high-contrast img {
+  filter: invert(1) contrast(200%);
+}
+
+.high-contrast .bg-brand-blue-600,
+.high-contrast .bg-blue-600,
+.high-contrast .bg-green-600 {
+  background-color: white !important;
+  color: black !important;
+}
