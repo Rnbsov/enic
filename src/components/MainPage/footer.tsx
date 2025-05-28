@@ -15,10 +15,11 @@ const Footer = () => {
             {/* Company Info Section */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <div className="h-16 mb-4">
+                <div className="relative h-16 mb-4">
                   <Image
                     src="/enic.png"
                     alt="ENIC Kazakhstan Logo"
+                    fill
                     className="h-16 w-auto bg-white p-2 rounded"
                   />
                 </div>
