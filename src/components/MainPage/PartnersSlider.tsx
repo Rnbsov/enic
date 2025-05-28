@@ -79,14 +79,6 @@ const PartnersSlider = () => {
                         src={partner.logo}
                         alt={partner.name}
                         className="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = 'none'
-                          const textDiv = document.createElement('div')
-                          textDiv.textContent = partner.name
-                          textDiv.className = 'text-gray-600 font-semibold text-sm text-center'
-                          target.parentElement?.appendChild(textDiv)
-                        }}
                       />
                     </div>
                   </div>
