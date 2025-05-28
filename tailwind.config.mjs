@@ -100,7 +100,7 @@ const config = {
           accent: 'hsl(var(--sidebar-accent))',
           'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
           border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
+          ring: 'hsl(var(--sidebar-ring))',
         },
         'brand-blue': {
           50: '#eff6ff',
@@ -113,7 +113,7 @@ const config = {
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',
-          950: '#172554'
+          950: '#172554',
         },
         'brand-gold': {
           50: '#fffbeb',
@@ -126,7 +126,7 @@ const config = {
           700: '#b45309',
           800: '#92400e',
           900: '#78350f',
-          950: '#451a03'
+          950: '#451a03',
         },
         'brand-light-blue': {
           50: '#f0f9ff',
@@ -139,13 +139,13 @@ const config = {
           700: '#0369a1',
           800: '#075985',
           900: '#0c4a6e',
-          950: '#082f49'
-        }
+          950: '#082f49',
+        },
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
-        'roboto': ['Roboto', 'Arial', 'sans-serif'],
+        roboto: ['Roboto', 'Arial', 'sans-serif'],
       },
       keyframes: {
         'accordion-down': {
@@ -156,6 +156,10 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
       typography: () => ({
         DEFAULT: {
