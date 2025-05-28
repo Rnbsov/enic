@@ -74,7 +74,7 @@ const Navigation = () => {
       {/* Main navigation */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-3 md:py-4">
-          <Link to="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <div className="h-16 md:h-20">
               <img 
                 src="/enic.png" 
