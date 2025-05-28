@@ -17,6 +17,7 @@ import { getServerSideURL } from '@/utilities/getURL'
 import './globals.css'
 import LocaleLayout from './locale-layout'
 import Breadcrumbs from '@/components/MainPage/Breadcrumbs'
+import AccessibilityToggle from '@/components/MainPage/AccessibilityToggle'
 
 export default async function RootLayout({
   children,
@@ -42,6 +43,7 @@ export default async function RootLayout({
             }}
           />
 
+          <AccessibilityToggle />
           <Navigation />
           <Breadcrumbs />
 
