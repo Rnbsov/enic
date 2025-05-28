@@ -11,7 +11,7 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 const nextConfig = {
   images: {
     remotePatterns: [
-      ...[NEXT_PUBLIC_SERVER_URL, 'images.unsplash.com'].map((item) => {
+      ...[NEXT_PUBLIC_SERVER_URL, 'https://images.unsplash.com'].map((item) => {
         const url = new URL(item)
 
         return {
