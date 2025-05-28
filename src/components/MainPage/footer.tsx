@@ -94,7 +94,7 @@ const Footer = () => {
               </h4>
               <div className="bg-gray-800 rounded-lg h-32 flex items-center justify-center border border-gray-700 overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.1234567890123!2d71.4234567!3d51.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzI0LjQiTiA3McKwMjUnMjQuNCJF!5e0!3m2!1sen!2skz!4v1234567890123!5m2!1sen!2skz"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.356377779549!2d71.43979957705625!3d51.12033417172786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458410730ef0bb%3A0x1f38846fa860703c!2sSyganak%20St%2070%2C%20Astana%20020000!5e0!3m2!1sen!2skz!4v1748429376010!5m2!1sen!2skz"
                   className="w-full h-full rounded-lg"
                   style={{ border: 0 }}
                   allowFullScreen={true}
