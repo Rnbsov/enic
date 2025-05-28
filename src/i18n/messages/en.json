@@ -25,7 +25,20 @@
     "qualityCenter": "National Quality Center",
     "recognitionRate": "Recognition Rate",
     "processingTime": "Processing Time",
-    "days": "days"
+    "days": "days",
+    "ministryBadge": "Ministry of Education and Science of RK",
+    "centerTitle": "National Center for Higher Education Development",
+    "officialRecognition": "Official recognition of foreign education documents and academic mobility in accordance with international quality standards.",
+    "submitApplication": "Submit Application",
+    "centerServices": "Center Services",
+    "quickRecognition": "Quick diploma recognition",
+    "processingDays": "Processing in 30 days",
+    "internationalStandards": "International standards",
+    "bolognaProcess": "Bologna Process",
+    "successRate": "Success rate",
+    "speed": "Processing speed",
+    "recognizedDiplomas": "Recognized diplomas",
+    "partnerCountries": "Partner countries"
   },
   "services": {
     "title": "Our Services",

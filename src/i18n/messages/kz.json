@@ -25,7 +25,20 @@
     "qualityCenter": "Ұлттық сапа орталығы",
     "recognitionRate": "Тану деңгейі",
     "processingTime": "Өңдеу уақыты",
-    "days": "күн"
+    "days": "күн",
+    "ministryBadge": "Қазақстан Республикасы Білім және ғылым министрлігі",
+    "centerTitle": "Жоғары білімді дамытудың ұлттық орталығы",
+    "officialRecognition": "Халықаралық сапа стандарттарына сәйкес шетелдік білім беру құжаттарын және академиялық ұтқырлықты ресми тану.",
+    "submitApplication": "Өтініш беру",
+    "centerServices": "Орталық қызметтері",
+    "quickRecognition": "Дипломдарды жылдам тану",
+    "processingDays": "30 күн ішінде өңдеу",
+    "internationalStandards": "Халықаралық стандарттар",
+    "bolognaProcess": "Болония үрдісі",
+    "successRate": "Тану нәтижелілігі",
+    "speed": "Өңдеу жылдамдығы",
+    "recognizedDiplomas": "Танылған дипломдар",
+    "partnerCountries": "Серіктес елдер"
   },
   "services": {
     "title": "Біздің қызметтер",

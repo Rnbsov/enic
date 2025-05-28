@@ -13,7 +13,7 @@ import {
 import { useTranslations } from 'next-intl'
 
 const HeroSection = () => {
-  const t = useTranslations()
+  const t = useTranslations('hero')
 
   return (
     <section className="relative bg-gradient-to-br from-brand-blue-700 via-brand-blue-800 to-brand-blue-900 py-20 lg:py-28 overflow-hidden">
@@ -41,9 +41,7 @@ const HeroSection = () => {
             {/* Official Badge */}
             <div className="inline-flex items-center mb-8 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
               <Shield className="w-5 h-5 text-brand-gold-300 mr-3" />
-              <span className="text-white font-medium text-sm">
-                Министерство образования и науки РК
-              </span>
+              <span className="text-white font-medium text-sm">{t('ministryBadge')}</span>
             </div>
 
             {/* Main Title */}
@@ -54,25 +52,24 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <h2 className="text-xl lg:text-2xl text-brand-light-blue-100 mb-6 font-medium">
-              Национальный центр развития высшего образования
+              {t('centerTitle')}
             </h2>
 
             {/* Description */}
             <p className="text-lg text-brand-light-blue-100 mb-12 leading-relaxed max-w-xl">
-              Официальное признание иностранных документов об образовании и академической
-              мобильности в соответствии с международными стандартами качества.
+              {t('officialRecognition')}
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button className="group bg-brand-gold-500 hover:bg-brand-gold-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <FileText className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-                Подать заявление
+                {t('submitApplication')}
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="group border-2 border-white/80 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:shadow-lg transform hover:-translate-y-1">
                 <Globe className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-                Услуги центра
+                {t('centerServices')}
               </button>
             </div>
 
@@ -80,21 +77,21 @@ const HeroSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                <span className="text-brand-light-blue-100 text-sm">
-                  Быстрое признание дипломов
-                </span>
+                <span className="text-brand-light-blue-100 text-sm">{t('quickRecognition')}</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-5 h-5 text-brand-gold-300 mr-3 flex-shrink-0" />
-                <span className="text-brand-light-blue-100 text-sm">Обработка за 30 дней</span>
+                <span className="text-brand-light-blue-100 text-sm">{t('processingDays')}</span>
               </div>
               <div className="flex items-center">
                 <Globe className="w-5 h-5 text-brand-light-blue-300 mr-3 flex-shrink-0" />
-                <span className="text-brand-light-blue-100 text-sm">Международные стандарты</span>
+                <span className="text-brand-light-blue-100 text-sm">
+                  {t('internationalStandards')}
+                </span>
               </div>
               <div className="flex items-center">
                 <Award className="w-5 h-5 text-brand-gold-300 mr-3 flex-shrink-0" />
-                <span className="text-brand-light-blue-100 text-sm">Болонский процесс</span>
+                <span className="text-brand-light-blue-100 text-sm">{t('bolognaProcess')}</span>
               </div>
             </div>
           </div>
@@ -110,14 +107,14 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-bold text-xl">ENIC Kazakhstan</h3>
-                    <p className="text-brand-light-blue-200 text-sm">Центр качества образования</p>
+                    <p className="text-brand-light-blue-200 text-sm">{t('qualityCenter')}</p>
                   </div>
                 </div>
 
                 <div className="space-y-6">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">Успешность признания</span>
+                      <span className="text-white font-medium">{t('successRate')}</span>
                       <span className="text-green-400 font-bold text-lg">98%</span>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
@@ -127,8 +124,10 @@ const HeroSection = () => {
 
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">Скорость обработки</span>
-                      <span className="text-brand-light-blue-300 font-bold text-lg">30 дней</span>
+                      <span className="text-white font-medium">{t('speed')}</span>
+                      <span className="text-brand-light-blue-300 font-bold text-lg">
+                        30 {t('days')}
+                      </span>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
                       <div className="bg-gradient-to-r from-brand-light-blue-400 to-brand-blue-500 h-3 rounded-full w-[85%] shadow-sm"></div>
@@ -143,7 +142,9 @@ const HeroSection = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-2xl font-bold text-white">15K+</div>
-                      <div className="text-brand-light-blue-200 text-sm">Признанных дипломов</div>
+                      <div className="text-brand-light-blue-200 text-sm">
+                        {t('recognizedDiplomas')}
+                      </div>
                     </div>
                     <BookOpen className="w-8 h-8 text-brand-gold-300 group-hover:scale-110 transition-transform" />
                   </div>
@@ -153,7 +154,9 @@ const HeroSection = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-2xl font-bold text-white">120+</div>
-                      <div className="text-brand-light-blue-200 text-sm">Стран партнеров</div>
+                      <div className="text-brand-light-blue-200 text-sm">
+                        {t('partnerCountries')}
+                      </div>
                     </div>
                     <Users className="w-8 h-8 text-brand-gold-300 group-hover:scale-110 transition-transform" />
                   </div>
