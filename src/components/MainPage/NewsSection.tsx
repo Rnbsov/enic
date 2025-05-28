@@ -14,7 +14,7 @@ const NewsSection = () => {
       time: '14:30',
       category: 'Образование',
       image:
-        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=250&fit=crop&auto=format',
+        'https://images.unsplash.com/photo-1548450847-8a9a5cc3968f?q=80&w=3008&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       excerpt:
         'Представители Казахстана приняли активное участие в международной ассамблее по вопросам высшего образования.',
     },
