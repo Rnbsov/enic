@@ -43,14 +43,15 @@ export default async function RootLayout({
               preview: isEnabled,
             }}
           />
+          <LocaleLayout params={params}>
+            <AccessibilityToggle />
+            <Navigation />
+            <Breadcrumbs />
 
-          <AccessibilityToggle />
-          <Navigation />
-          <Breadcrumbs />
-
-          <LocaleLayout params={params}>{children}</LocaleLayout>
-          <Footer />
-          <ChatbotWidget />
+            {children}
+            <Footer />
+            <ChatbotWidget />
+          </LocaleLayout>
         </Providers>
       </body>
     </html>
