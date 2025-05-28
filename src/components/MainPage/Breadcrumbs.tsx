@@ -25,7 +25,9 @@ const Breadcrumbs = () => {
   const t = useTranslations('breadcrumbs')
 
   // Don't show breadcrumbs on home page
-  if (pathname === '/') {
+  // FIXME: this is workaround for locale paths
+  // Ideally, we should handle locale paths in a more elegant way
+  if (pathname === '/en' || pathname === '/ru' || pathname === '/kz') {
     return null
   }
 
