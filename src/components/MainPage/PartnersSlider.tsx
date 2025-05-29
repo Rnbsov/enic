@@ -9,7 +9,7 @@ import {
 import { useTranslations } from 'next-intl'
 
 const PartnersSlider = () => {
-  const t = useTranslations()
+  const t = useTranslations('partners')
 
   // Updated partners array with correct image URLs from HTML
   const partners = [
@@ -83,8 +83,7 @@ const PartnersSlider = () => {
   return (
     <section className="bg-gray-50 py-12 border-t border-gray-200">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">{t('partners.title')}</h2>
-
+        <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">{t('title')}</h2>
         <div className="relative max-w-[78rem] mx-auto">
           <Carousel
             opts={{
@@ -119,12 +118,9 @@ const PartnersSlider = () => {
             <CarouselPrevious className="left-4" />
             <CarouselNext className="right-4" />
           </Carousel>
-        </div>
-
+        </div>{' '}
         {/* Additional info */}
-        <p className="text-center text-sm text-gray-500 mt-6">
-          Более 120 стран-партнеров • Международное признание • Официальные соглашения
-        </p>
+        <p className="text-center text-sm text-gray-500 mt-6">{t('stats')}</p>
       </div>
     </section>
   )

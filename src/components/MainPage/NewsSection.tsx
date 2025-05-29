@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 const NewsSection = () => {
-  const t = useTranslations()
+  const t = useTranslations('news')
 
   const news = [
     {
@@ -13,8 +13,7 @@ const NewsSection = () => {
       date: '20 Май 2025',
       time: '14:30',
       category: 'Образование',
-      image:
-        '/almaty.jpg',
+      image: '/almaty.jpg',
       excerpt:
         'Представители Казахстана приняли активное участие в международной ассамблее по вопросам высшего образования.',
     },
@@ -70,14 +69,13 @@ const NewsSection = () => {
     <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
+          {' '}
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              {t('news.title') || 'Новости'}
-            </h2>
-            <p className="text-gray-600 text-lg">Актуальные события и важные объявления</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">{t('title')}</h2>
+            <p className="text-gray-600 text-lg">{t('description')}</p>
           </div>
           <button className="mt-4 lg:mt-0 bg-brand-blue-600 hover:bg-brand-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center transition-all duration-300 hover:shadow-lg">
-            Все новости
+            {t('allNews')}
             <ArrowRight className="w-5 h-5 ml-2" />
           </button>
         </div>
@@ -121,9 +119,9 @@ const NewsSection = () => {
                     <h3 className="text-xl font-bold text-gray-800 mb-4 line-clamp-2 group-hover:text-brand-blue-600 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 line-clamp-2">{item.excerpt}</p>
+                    <p className="text-gray-600 mb-6 line-clamp-2">{item.excerpt}</p>{' '}
                     <button className="text-brand-blue-600 hover:text-brand-blue-700 font-medium flex items-center group/btn">
-                      Читать далее
+                      {t('readMore')}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
                     </button>
                   </div>
@@ -135,9 +133,10 @@ const NewsSection = () => {
           {/* Events Sidebar */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
+              {' '}
               <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <Calendar className="w-6 h-6 mr-3 text-brand-blue-600" />
-                Календарь событий
+                {t('eventsCalendar')}
               </h3>
               <div className="space-y-4">
                 {events.map((event, index) => (
@@ -160,10 +159,12 @@ const NewsSection = () => {
                         </div>
                         <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-brand-blue-600 transition-colors duration-200">
                           {event.title}
-                        </h4>
+                        </h4>{' '}
                         <div className="flex items-center text-sm text-gray-500">
                           <Eye className="w-4 h-4 mr-1" />
-                          <span>{event.views} просмотров</span>
+                          <span>
+                            {event.views} {t('viewsText')}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -171,21 +172,20 @@ const NewsSection = () => {
                 ))}
               </div>
             </div>
-
-            {/* Quick Stats */}
+            {/* Quick Stats */}{' '}
             <div className="bg-gradient-to-br from-brand-blue-600 to-brand-blue-700 rounded-2xl p-6 text-white shadow-lg">
-              <h4 className="font-bold text-lg mb-4">Статистика</h4>
+              <h4 className="font-bold text-lg mb-4">{t('statistics')}</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">Всего новостей</span>
+                  <span className="text-blue-100">{t('totalNews')}</span>
                   <span className="font-bold text-xl">156</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">События в месяц</span>
+                  <span className="text-blue-100">{t('eventsPerMonth')}</span>
                   <span className="font-bold text-xl">24</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">Просмотры</span>
+                  <span className="text-blue-100">{t('views')}</span>
                   <span className="font-bold text-xl">12.5K</span>
                 </div>
               </div>

@@ -39,7 +39,8 @@
     "speed": "Processing speed",
     "recognizedDiplomas": "Recognized diplomas",
     "partnerCountries": "Partner countries"
-  },  "services": {
+  },
+  "services": {
     "title": "Our Services",
     "description": "Comprehensive solutions for ensuring higher education quality and compliance with international standards",
     "allServices": "All Services",
@@ -69,10 +70,20 @@
     }
   },
   "partners": {
-    "title": "Our Partners"
+    "title": "Our Partners",
+    "stats": "120+ partner countries • International recognition • Official agreements"
   },
   "news": {
-    "title": "News"
+    "title": "News",
+    "description": "Current events and important announcements",
+    "allNews": "All News",
+    "readMore": "Read More",
+    "eventsCalendar": "Events Calendar",
+    "totalNews": "Total News",
+    "eventsPerMonth": "Events per month",
+    "views": "Views",
+    "viewsText": "views",
+    "statistics": "Statistics"
   },
   "accessibility": {
     "enable": "Version for visually impaired",
@@ -197,5 +208,9 @@
     "principle4": "Calculation includes lectures, seminars and independent work",
     "importantToKnow": "Important to Know",
     "disclaimer": "This calculator provides approximate values. For accurate calculation, please contact center specialists."
+  },
+  "serviceCard": {
+    "readMore": "Read More",
+    "popular": "★ Popular"
   }
 }
