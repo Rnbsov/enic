@@ -13,9 +13,9 @@ import { usePathname, useRouter } from '@/i18n/nativation'
 
 // Define languages with their display properties
 const LANGUAGES = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'kz', name: 'Қазақша', flag: '🇰🇿' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
 ]
 
 const LanguageSwitcher = () => {
