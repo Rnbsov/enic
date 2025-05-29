@@ -39,11 +39,34 @@
     "speed": "Processing speed",
     "recognizedDiplomas": "Recognized diplomas",
     "partnerCountries": "Partner countries"
-  },
-  "services": {
+  },  "services": {
     "title": "Our Services",
     "description": "Comprehensive solutions for ensuring higher education quality and compliance with international standards",
-    "allServices": "All Services"
+    "allServices": "All Services",
+    "documentRecognition": {
+      "title": "Recognition of Foreign Education Documents",
+      "description": "Official recognition of diplomas and education documents obtained abroad"
+    },
+    "programAccreditation": {
+      "title": "Educational Program Accreditation",
+      "description": "Accreditation procedures for educational programs of higher education institutions"
+    },
+    "bolognaProcess": {
+      "title": "Bologna Process",
+      "description": "Information about the Bologna Process and European integration in education"
+    },
+    "ectsCalculator": {
+      "title": "ECTS Calculator",
+      "description": "Interactive tool for calculating European credit units"
+    },
+    "programRegistry": {
+      "title": "Educational Programs Registry",
+      "description": "Database of accredited educational programs in Kazakhstan"
+    },
+    "consultationSupport": {
+      "title": "Consultation and Support",
+      "description": "Get professional consultation on education quality issues"
+    }
   },
   "partners": {
     "title": "Our Partners"
