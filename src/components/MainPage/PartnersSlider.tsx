@@ -11,46 +11,72 @@ import { useTranslations } from 'next-intl'
 const PartnersSlider = () => {
   const t = useTranslations()
 
+  // Updated partners array with correct image URLs from HTML
   const partners = [
+    {
+      name: 'European Higher Education Area (EHEA)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/14/logo.png?cache=1591362038',
+      website: 'http://www.ehea.info/',
+    },
+    {
+      name: 'ENIC-NARIC Network',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/13/logo.png?cache=1557896272',
+      website: 'https://www.enic-naric.net/',
+    },
+    {
+      name: 'European Students Union (ESU)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/12/logo.png?cache=1557896201',
+      website: 'https://www.esu-online.org/',
+    },
+    {
+      name: 'European Quality Assurance Register (EQAR)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/11/logo.png?cache=1557896074',
+      website: 'https://www.eqar.eu/',
+    },
+    {
+      name: 'European Association for Quality Assurance in Higher Education (ENQA)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/10/logo.png?cache=1646905450',
+      website: 'https://enqa.eu/',
+    },
+    {
+      name: 'European Association of Institutions in Higher Education (EURASHE)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/9/logo.png?cache=1646905245',
+      website: 'https://www.eurashe.eu/',
+    },
+    {
+      name: 'European University Association (EUA)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/8/logo.png?cache=1557895712',
+      website: 'https://eua.eu/',
+    },
+    {
+      name: 'Bologna Process',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/7/logo.png?cache=1557895599',
+      website: 'http://www.ehea.info/',
+    },
+    {
+      name: 'NIC Russia',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/6/logo.png?cache=1553673790',
+      website: 'https://www.nic.gov.ru/',
+    },
+    {
+      name: 'Independent Agency for Quality Assurance in Education (IQAA)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/5/logo.png?cache=1553669897',
+      website: 'https://iqaa.kz/kk/',
+    },
+    {
+      name: 'Independent Agency for Accreditation and Rating (IAAR)',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/4/logo.png?cache=1553668910',
+      website: 'http://www.iaar.kz/kz/',
+    },
+    {
+      name: 'Kasipkor',
+      logo: 'https://enic-kazakhstan.edu.kz/uploads/partners/3/logo.png?cache=1646904918',
+      website: 'http://kasipkor.kz/',
+    },
     {
       name: 'UNESCO',
       logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/UNESCO_logo.svg/200px-UNESCO_logo.svg.png',
       website: 'https://unesco.org',
-    },
-    {
-      name: 'European Commission',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/200px-Flag_of_Europe.svg.png',
-      website: 'https://ec.europa.eu',
-    },
-    {
-      name: 'Bologna Process',
-      logo: 'https://www.ehea.info/media/filer_public/2018/11/08/bologna_process_logo.png',
-      website: 'https://ehea.info',
-    },
-    {
-      name: 'ENIC-NARIC',
-      logo: 'https://www.enic-naric.net/fileadmin/user_upload/logos/enic-naric-logo.png',
-      website: 'https://enic-naric.net',
-    },
-    {
-      name: 'Council of Europe',
-      logo: 'https://www.coe.int/documents/16695/0/CoE-Logo-positive-CMYK-CS.eps/2b6b2c84-c0f1-4007-a46e-59e4e9cce8d5?t=1539778968000',
-      website: 'https://coe.int',
-    },
-    {
-      name: 'ENQA',
-      logo: 'https://www.enqa.eu/wp-content/uploads/2019/06/ENQA_logo_colour.png',
-      website: 'https://enqa.eu',
-    },
-    {
-      name: 'World Bank',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/WorldBank.svg/200px-WorldBank.svg.png',
-      website: 'https://worldbank.org',
-    },
-    {
-      name: 'OECD',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/OECD_logo.svg/200px-OECD_logo.svg.png',
-      website: 'https://oecd.org',
     },
   ]
 
@@ -59,7 +85,7 @@ const PartnersSlider = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">{t('partners.title')}</h2>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-[78rem] mx-auto">
           <Carousel
             opts={{
               align: 'start',
@@ -73,7 +99,12 @@ const PartnersSlider = () => {
                   key={index}
                   className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
-                  <div className="group cursor-pointer p-4">
+                  <a
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group cursor-pointer p-4 block"
+                  >
                     <div className="h-20 w-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                       <img
                         src={partner.logo}
@@ -81,7 +112,7 @@ const PartnersSlider = () => {
                         className="max-h-16 max-w-full object-contain  transition-all duration-300"
                       />
                     </div>
-                  </div>
+                  </a>
                 </CarouselItem>
               ))}
             </CarouselContent>
