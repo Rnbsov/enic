@@ -1,40 +1,41 @@
+import { useTranslations } from 'next-intl'
+
 export default function BolognaPage() {
+  const t = useTranslations('bologna')
+
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Болонский процесс</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-8">{t('pageTitle')}</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-600 mb-6">
-              Болонский процесс — это процесс создания единого европейского пространства высшего
-              образования, к которому присоединился Казахстан в 2010 году.
+              {t('description')}
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-              Цели Болонского процесса
+              {t('goalsTitle')}
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Повышение качества высшего образования</li>
-              <li>Обеспечение мобильности студентов и преподавателей</li>
-              <li>Признание квалификаций</li>
-              <li>Трудоустройство выпускников</li>
-              <li>Привлекательность европейского высшего образования</li>
+              <li>{t('goals.quality')}</li>
+              <li>{t('goals.mobility')}</li>
+              <li>{t('goals.recognition')}</li>
+              <li>{t('goals.employment')}</li>
+              <li>{t('goals.attractiveness')}</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Участие Казахстана</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('participationTitle')}</h2>
             <p className="text-gray-600 mb-6">
-              Казахстан активно участвует в Болонском процессе, внедряя европейские стандарты
-              качества образования и обеспечивая признание казахстанских дипломов в европейских
-              странах.
+              {t('participationText')}
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Ключевые инструменты</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('toolsTitle')}</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Система зачетных единиц ECTS</li>
-              <li>Трехуровневая система образования (бакалавриат, магистратура, докторантура)</li>
-              <li>Приложение к диплому европейского образца</li>
-              <li>Внешнее обеспечение качества образования</li>
+              <li>{t('tools.ects')}</li>
+              <li>{t('tools.levels')}</li>
+              <li>{t('tools.supplement')}</li>
+              <li>{t('tools.quality')}</li>
             </ul>
           </div>
         </div>

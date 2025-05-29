@@ -208,9 +208,60 @@
     "principle4": "Calculation includes lectures, seminars and independent work",
     "importantToKnow": "Important to Know",
     "disclaimer": "This calculator provides approximate values. For accurate calculation, please contact center specialists."
-  },
-  "serviceCard": {
+  },  "serviceCard": {
     "readMore": "Read More",
     "popular": "★ Popular"
+  },
+  "about": {
+    "pageTitle": "About the Center",
+    "description": "Republican State Enterprise on the Right of Economic Management 'National Center for Higher Education Development' of the Ministry of Science and Higher Education of the Republic of Kazakhstan is a leading organization in the field of quality higher education development.",
+    "missionTitle": "Our Mission",
+    "missionText": "Promoting the development of quality higher education in the Republic of Kazakhstan through qualification recognition, accreditation of educational programs, and integration into the international educational space.",
+    "activitiesTitle": "Main Activities",
+    "activities": {
+      "recognition": "Recognition of foreign educational documents",
+      "accreditation": "Accreditation of educational programs",
+      "bologna": "Supporting Kazakhstan in the Bologna Process",
+      "quality": "Development of education quality assurance system",
+      "research": "Conducting scientific research in higher education",
+      "cooperation": "International cooperation in education"
+    }
+  },  "registry": {
+    "pageTitle": "Registry of Educational Programs",
+    "description": "Official registry of accredited higher and postgraduate educational programs of the Republic of Kazakhstan.",
+    "purposeTitle": "Registry Purpose",
+    "purposeText": "The registry is designed to ensure transparency and accessibility of information about accredited educational programs, which contributes to improving the quality of education and protecting the rights of students.",
+    "informationTitle": "Information in the Registry",
+    "information": {
+      "programName": "Name of educational program",
+      "programCode": "Code and group of educational program",
+      "organizationName": "Name of educational organization",
+      "accreditationPeriod": "Accreditation validity period",
+      "decisionDate": "Date of accreditation decision",
+      "accreditationStatus": "Accreditation status"
+    },
+    "searchTitle": "Search in Registry",
+    "searchText": "To search for accredited educational programs, use filters by university name, field of study, or specialty code."
+  },
+  "bologna": {
+    "pageTitle": "Bologna Process",
+    "description": "The Bologna Process is a process of creating a unified European higher education area, which Kazakhstan joined in 2010.",
+    "goalsTitle": "Bologna Process Goals",
+    "goals": {
+      "quality": "Improving the quality of higher education",
+      "mobility": "Ensuring mobility of students and teachers",
+      "recognition": "Recognition of qualifications",
+      "employment": "Employment of graduates",
+      "attractiveness": "Attractiveness of European higher education"
+    },
+    "participationTitle": "Kazakhstan's Participation",
+    "participationText": "Kazakhstan actively participates in the Bologna Process, implementing European quality standards in education and ensuring recognition of Kazakhstani diplomas in European countries.",
+    "toolsTitle": "Key Tools",
+    "tools": {
+      "ects": "ECTS credit system",
+      "levels": "Three-level education system (bachelor, master, doctorate)",
+      "supplement": "European diploma supplement",
+      "quality": "External quality assurance in education"
+    }
   }
 }
