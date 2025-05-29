@@ -1,15 +1,16 @@
 'use client'
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/nativation';
-import NextLink from 'next/link';
-import LanguageSwitcher from './LanguageSwitcher';
+import React, { useState, useEffect } from 'react'
+import { Menu, X, Phone, Mail } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/nativation'
+import NextLink from 'next/link'
+import LanguageSwitcher from './LanguageSwitcher'
+import Image from 'next/image'
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const t = useTranslations();
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const t = useTranslations()
 
   const navItems = [
     { name: t('nav.about'), href: '/about' },
@@ -19,42 +20,50 @@ const Navigation = () => {
     { name: t('nav.registry'), href: '/registry' },
     { name: t('nav.activities'), href: '#activities' },
     { name: t('nav.faq'), href: '/faq' },
-    { name: t('nav.vacancies'), href: '#vacancies' }
-  ];
+    { name: t('nav.vacancies'), href: '#vacancies' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Close mobile menu when clicking outside or on navigation item
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const nav = document.getElementById('mobile-nav');
-      const button = document.getElementById('mobile-menu-button');
-      if (isMenuOpen && nav && button && !nav.contains(event.target as Node) && !button.contains(event.target as Node)) {
-        setIsMenuOpen(false);
+      const nav = document.getElementById('mobile-nav')
+      const button = document.getElementById('mobile-menu-button')
+      if (
+        isMenuOpen &&
+        nav &&
+        button &&
+        !nav.contains(event.target as Node) &&
+        !button.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false)
       }
-    };
+    }
 
     if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.addEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = 'hidden' // Prevent background scrolling
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'unset'
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMenuOpen]);
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   return (
-    <div className={`bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-xl' : 'shadow-lg'}`}>
+    <div
+      className={`bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-xl' : 'shadow-lg'}`}
+    >
       {/* Top bar - hidden on small screens */}
       <div className="bg-brand-blue-900 text-white py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
@@ -62,7 +71,10 @@ const Navigation = () => {
             <LanguageSwitcher />
           </div>
           <div className="flex items-center space-x-4">
-            <a href="tel:+77172572075" className="flex items-center hover:text-brand-gold-300 transition-colors">
+            <a
+              href="tel:+77172572075"
+              className="flex items-center hover:text-brand-gold-300 transition-colors"
+            >
               <Phone className="w-4 h-4 mr-1" /> +7 (7172) 57-20-75
             </a>
             <span className="flex items-center">
@@ -76,10 +88,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-3 md:py-4">
           <Link href="/" className="flex items-center">
-            <div className="h-16 md:h-20">
-              <img 
-                src="/enic.png" 
-                alt="ENIC Kazakhstan Logo" 
+            <div className="h-16 md:h-20 w-auto relative">
+              <Image
+                src="/enic.png"
+                alt="ENIC Kazakhstan Logo"
+                height={80}
+                width={200}
                 className="h-16 md:h-20 w-auto"
               />
             </div>
@@ -87,7 +101,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) => (
+            {navItems.map((item) =>
               item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
@@ -106,17 +120,13 @@ const Navigation = () => {
                   {item.name}
                   <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-blue-600 transition-all duration-200 group-hover:w-full group-hover:left-0"></span>
                 </a>
-              )
-            ))}
+              ),
+            )}
           </div>
 
-          <div className="hidden lg:block h-16 md:h-20">
-              <img 
-                src="/bolona.png" 
-                alt="Bolona" 
-                className="h-16 md:h-20 w-auto"
-              />
-            </div>
+          <div className="z-50 hidden lg:block h-16 md:h-20 w-16 md:w-20 relative">
+            <Image src="/bologna.png" alt="Bologna Process Logo" fill />
+          </div>
 
           {/* Mobile menu button with better touch target */}
           <button
@@ -131,9 +141,7 @@ const Navigation = () => {
         </div>
 
         {/* Mobile menu overlay */}
-        {isMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" />
-        )}
+        {isMenuOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" />}
 
         {/* Mobile menu - improved with better UX */}
         <div
@@ -144,11 +152,7 @@ const Navigation = () => {
         >
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className="h-12">
-              <img 
-                src="/enic.png" 
-                alt="ENIC Kazakhstan Logo" 
-                className="h-12 w-auto"
-              />
+              <img src="/enic.png" alt="ENIC Kazakhstan Logo" className="h-12 w-auto" />
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
@@ -166,17 +170,20 @@ const Navigation = () => {
 
           {/* Mobile Contact Info */}
           <div className="px-4 py-3 border-b border-gray-200 md:hidden">
-            <a href="tel:+77172572075" className="flex items-center text-sm text-gray-600 hover:text-brand-blue-600 transition-colors mb-2">
+            <a
+              href="tel:+77172572075"
+              className="flex items-center text-sm text-gray-600 hover:text-brand-blue-600 transition-colors mb-2"
+            >
               <Phone className="w-4 h-4 mr-2" /> +7 (7172) 57-20-75
             </a>
-            <NextLink href='/admin' className="flex items-center text-sm text-gray-600">
+            <NextLink href="/admin" className="flex items-center text-sm text-gray-600">
               <Mail className="w-4 h-4 mr-2" /> {t('nav.personalAccount')}
             </NextLink>
           </div>
 
           {/* Mobile Navigation Items */}
           <nav className="flex-1 overflow-y-auto py-4">
-            {navItems.map((item) => (
+            {navItems.map((item) =>
               item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
@@ -195,13 +202,13 @@ const Navigation = () => {
                 >
                   {item.name}
                 </a>
-              )
-            ))}
+              ),
+            )}
           </nav>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
