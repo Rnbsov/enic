@@ -101,5 +101,48 @@
         "description": "Let us know if the answer was helpful"
       }
     }
+  },
+  "applications": {
+    "title": "Online Applications",
+    "description": "Submit applications and track their status conveniently online",
+    "availableApplications": "Available Applications",
+    "diplomaRecognition": {
+      "title": "Diploma Recognition Application",
+      "description": "Submit an application for education document recognition"
+    },
+    "programAccreditation": {
+      "title": "Educational Program Accreditation Application",
+      "description": "Submit an application for educational program accreditation"
+    },
+    "statusInquiry": {
+      "title": "Application Status Inquiry",
+      "description": "Get information about your application review progress"
+    },
+    "selected": "Selected ✓",
+    "selectApplication": "Select Application →",
+    "attachDocuments": "Attach Documents",
+    "uploadFiles": "Drag and drop files here or",
+    "browseFiles": "browse files",
+    "fileFormats": "Supported formats: PDF, JPG, PNG",
+    "applicationProcess": "Application Process",
+    "processDescription": "Simple 4-step process to submit your application",
+    "steps": {
+      "step1": {
+        "title": "Select application type",
+        "description": "Choose the service you need"
+      },
+      "step2": {
+        "title": "Fill out the form",
+        "description": "Provide all required information"
+      },
+      "step3": {
+        "title": "Attach documents",
+        "description": "Upload scanned documents"
+      },
+      "step4": {
+        "title": "Submit application",
+        "description": "Get a tracking number"
+      }
+    }
   }
 }
