@@ -62,15 +62,21 @@ const HeroSection = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="group bg-brand-gold-500 hover:bg-brand-gold-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a
+                href="#online-applications"
+                className="group bg-brand-gold-500 hover:bg-brand-gold-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
                 <FileText className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
                 {t('submitApplication')}
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="group border-2 border-white/80 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center backdrop-blur-sm hover:shadow-lg transform hover:-translate-y-1">
+              </a>
+              <a
+                href="#services"
+                className="group border-2 border-white/80 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center backdrop-blur-sm hover:shadow-lg transform hover:-translate-y-1"
+              >
                 <Globe className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
                 {t('centerServices')}
-              </button>
+              </a>
             </div>
 
             {/* Key Features */}

@@ -53,7 +53,7 @@ const OnlineApplications = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="online-applications">
       <div className="container mx-auto px-4">
         {' '}
         <div className="text-center mb-12">
