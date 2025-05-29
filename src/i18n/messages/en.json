@@ -150,7 +150,8 @@
       "step4": {
         "title": "Submit application",
         "description": "Get a tracking number"
-      }    }
+      }
+    }
   },
   "calculator": {
     "title": "ECTS Calculator",

@@ -1,34 +1,34 @@
 'use client'
-import React, { useState } from 'react';
-import { Calculator, Info } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import React, { useState } from 'react'
+import { Calculator, Info } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 const ECTSCalculator = () => {
-  const t = useTranslations('calculator');
-  const [localCredits, setLocalCredits] = useState('');
-  const [academicHours, setAcademicHours] = useState('');
-  const [result, setResult] = useState<number | null>(null);
+  const t = useTranslations('calculator')
+  const [localCredits, setLocalCredits] = useState('')
+  const [academicHours, setAcademicHours] = useState('')
+  const [result, setResult] = useState<number | null>(null)
 
   const calculateECTS = () => {
-    const hours = parseFloat(academicHours);
-    const credits = parseFloat(localCredits);
-    
+    const hours = parseFloat(academicHours)
+    const credits = parseFloat(localCredits)
+
     if (hours && !isNaN(hours)) {
       // Standard ECTS calculation: 1 ECTS = 25-30 academic hours
-      const ectsFromHours = hours / 30;
-      setResult(Math.round(ectsFromHours * 10) / 10);
+      const ectsFromHours = hours / 30
+      setResult(Math.round(ectsFromHours * 10) / 10)
     } else if (credits && !isNaN(credits)) {
       // Approximate conversion for Kazakhstan credits
-      const ectsFromCredits = credits * 2;
-      setResult(Math.round(ectsFromCredits * 10) / 10);
+      const ectsFromCredits = credits * 2
+      setResult(Math.round(ectsFromCredits * 10) / 10)
     }
-  };
+  }
 
   const resetCalculator = () => {
-    setLocalCredits('');
-    setAcademicHours('');
-    setResult(null);
-  };
+    setLocalCredits('')
+    setAcademicHours('')
+    setResult(null)
+  }
 
   return (
     <section className="py-16 bg-white">
@@ -37,16 +37,16 @@ const ECTSCalculator = () => {
           <div className="text-center mb-12">
             <div className="bg-brand-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Calculator className="w-8 h-8 text-brand-blue-600" />
-            </div>            <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('title')}</h2>
-            <p className="text-lg text-gray-600">
-              {t('description')}
-            </p>
+            </div>{' '}
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('title')}</h2>
+            <p className="text-lg text-gray-600">{t('description')}</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Calculator Form */}            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Calculator Form */}{' '}
+            <div className="bg-gray-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-800 mb-6">{t('formTitle')}</h3>
-              
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -101,16 +101,16 @@ const ECTSCalculator = () => {
                 )}
               </div>
             </div>
-
-            {/* Information Panel */}            <div className="space-y-6">
+            {/* Information Panel */}{' '}
+            <div className="space-y-6">
               <div className="bg-brand-light-blue-50 p-6 rounded-xl border border-brand-light-blue-200">
                 <div className="flex items-start space-x-3">
                   <Info className="w-5 h-5 text-brand-light-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium text-brand-light-blue-800 mb-2">{t('whatIsECTS')}</h4>
-                    <p className="text-sm text-brand-light-blue-700">
-                      {t('ectsDescription')}
-                    </p>
+                    <h4 className="font-medium text-brand-light-blue-800 mb-2">
+                      {t('whatIsECTS')}
+                    </h4>
+                    <p className="text-sm text-brand-light-blue-700">{t('ectsDescription')}</p>
                   </div>
                 </div>
               </div>
@@ -127,16 +127,14 @@ const ECTSCalculator = () => {
 
               <div className="bg-orange-50 p-6 rounded-xl border border-orange-200">
                 <h4 className="font-medium text-orange-800 mb-2">{t('importantToKnow')}</h4>
-                <p className="text-sm text-orange-700">
-                  {t('disclaimer')}
-                </p>
+                <p className="text-sm text-orange-700">{t('disclaimer')}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ECTSCalculator;
+export default ECTSCalculator
