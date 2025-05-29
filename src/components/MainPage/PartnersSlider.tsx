@@ -78,7 +78,7 @@ const PartnersSlider = () => {
                       <img
                         src={partner.logo}
                         alt={partner.name}
-                        className="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                        className="max-h-16 max-w-full object-contain  transition-all duration-300"
                       />
                     </div>
                   </div>
