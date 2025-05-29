@@ -132,7 +132,7 @@ const OnlineApplications = () => {
                 {/* Selected Files List */}
                 {selectedFiles.length > 0 && (
                   <div className="mt-4 space-y-2">
-                    <h5 className="font-medium text-gray-700 text-sm">Загруженные файлы:</h5>
+                    <h5 className="font-medium text-gray-700 text-sm">{t('uploadedFiles')}</h5>
                     {selectedFiles.map((file, index) => (
                       <div
                         key={index}
@@ -144,20 +144,20 @@ const OnlineApplications = () => {
                           <span className="text-xs text-gray-500">
                             ({Math.round(file.size / 1024)} KB)
                           </span>
-                        </div>
+                        </div>{' '}
                         <button
                           onClick={() => removeFile(index)}
                           className="text-red-500 hover:text-red-700 p-1"
-                          title="Удалить файл"
+                          title={t('removeFile')}
                         >
                           <X className="w-4 h-4" />
                         </button>
                       </div>
                     ))}
                   </div>
-                )}
+                )}{' '}
                 <button className="w-full mt-6 bg-brand-blue-600 text-white py-3 px-6 rounded-lg hover:bg-brand-blue-700 transition-colors duration-200 font-medium">
-                  Подать заявление
+                  {t('submitApplication')}
                 </button>
               </div>
             )}
@@ -165,9 +165,10 @@ const OnlineApplications = () => {
 
           {/* Process Steps */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">Как подать заявление</h3>
+            {' '}
+            <h3 className="text-xl font-semibold text-gray-800 mb-6">{t('applicationProcess')}</h3>
             <div className="space-y-6">
-              {steps.map((step, index) => (
+              {steps.map((step, _index) => (
                 <div key={step.step} className="flex items-start space-x-4">
                   <div className="bg-brand-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm flex-shrink-0">
                     {step.step}
@@ -178,15 +179,14 @@ const OnlineApplications = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
+            </div>{' '}
             <div className="mt-8 p-6 bg-brand-light-blue-50 rounded-xl border border-brand-light-blue-200">
-              <h4 className="font-medium text-brand-blue-800 mb-2">Требования к документам</h4>
+              <h4 className="font-medium text-brand-blue-800 mb-2">{t('documentRequirements')}</h4>
               <ul className="text-sm text-brand-blue-700 space-y-1">
-                <li>• Формат файлов: PDF, JPG, PNG</li>
-                <li>• Максимальный размер: 10 МБ</li>
-                <li>• Качество сканирования: 300 DPI</li>
-                <li>• Документы должны быть читаемыми</li>
+                <li>• {t('fileFormat')}</li>
+                <li>• {t('maxSize')}</li>
+                <li>• {t('scanQuality')}</li>
+                <li>• {t('readableDocuments')}</li>
               </ul>
             </div>
           </div>
