@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/nativation';
+import NextLink from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navigation = () => {
@@ -168,9 +169,9 @@ const Navigation = () => {
             <a href="tel:+77172572075" className="flex items-center text-sm text-gray-600 hover:text-brand-blue-600 transition-colors mb-2">
               <Phone className="w-4 h-4 mr-2" /> +7 (7172) 57-20-75
             </a>
-            <span className="flex items-center text-sm text-gray-600">
+            <NextLink href='/admin' className="flex items-center text-sm text-gray-600">
               <Mail className="w-4 h-4 mr-2" /> {t('nav.personalAccount')}
-            </span>
+            </NextLink>
           </div>
 
           {/* Mobile Navigation Items */}
