@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 import { cn } from '@/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
+import { Roboto } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -20,6 +20,19 @@ import Breadcrumbs from '@/components/MainPage/Breadcrumbs'
 import AccessibilityToggle from '@/components/MainPage/AccessibilityToggle'
 import ChatbotWidget from '@/components/MainPage/ChatbotWidget'
 
+const roboto = Roboto({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-roboto',
+  display: 'swap',
+})
+
+const robotoMono = Roboto_Mono({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+})
+
 export default async function RootLayout({
   children,
   params,
@@ -30,7 +43,7 @@ export default async function RootLayout({
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(roboto.variable, robotoMono.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />

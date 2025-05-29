@@ -143,9 +143,8 @@ const config = {
         },
       },
       fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
-        roboto: ['Roboto', 'Arial', 'sans-serif'],
+        mono: ['var(--font-roboto-mono)'],
+        sans: ['var(--font-roboto)'],
       },
       keyframes: {
         'accordion-down': {
