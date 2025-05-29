@@ -144,7 +144,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <div className="h-12">
               <img 
-                src="/lovable-uploads/a930fab9-b5eb-459b-8b59-b525526f0d72.png" 
+                src="/enic.png" 
                 alt="ENIC Kazakhstan Logo" 
                 className="h-12 w-auto"
               />
