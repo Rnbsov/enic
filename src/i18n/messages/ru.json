@@ -150,7 +150,28 @@
       "step4": {
         "title": "Отправьте заявление",
         "description": "Получите номер для отслеживания"
-      }
-    }
+      }    }
+  },
+  "calculator": {
+    "title": "Калькулятор ECTS",
+    "description": "Конвертируйте местные академические кредиты в европейские кредитные единицы (ECTS)",
+    "formTitle": "Расчет ECTS",
+    "academicHours": "Академические часы",
+    "academicHoursPlaceholder": "Введите количество часов",
+    "or": "или",
+    "localCredits": "Местные кредиты (Казахстан)",
+    "localCreditsPlaceholder": "Введите количество кредитов",
+    "calculateButton": "Рассчитать",
+    "resetButton": "Сброс",
+    "approximateValue": "Приблизительное значение",
+    "whatIsECTS": "Что такое ECTS?",
+    "ectsDescription": "European Credit Transfer and Accumulation System (ECTS) - европейская система зачетных единиц для сравнения академических достижений студентов.",
+    "calculationPrinciples": "Принципы расчета",
+    "principle1": "1 ECTS = 25-30 академических часов",
+    "principle2": "1 академический год = 60 ECTS",
+    "principle3": "1 семестр = 30 ECTS",
+    "principle4": "Расчет включает лекции, семинары и самостоятельную работу",
+    "importantToKnow": "Важно знать",
+    "disclaimer": "Данный калькулятор предоставляет приблизительные значения. Для точного расчета обратитесь к специалистам центра."
   }
 }

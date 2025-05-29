@@ -150,7 +150,28 @@
       "step4": {
         "title": "Өтінішті жіберіңіз",
         "description": "Қадағалау үшін нөмір алыңыз"
-      }
-    }
+      }    }
+  },
+  "calculator": {
+    "title": "ECTS калькуляторы",
+    "description": "Жергілікті академиялық кредиттерді еуропалық кредиттік жүйеге (ECTS) түрлендіру",
+    "formTitle": "ECTS есептеу",
+    "academicHours": "Академиялық сағаттар",
+    "academicHoursPlaceholder": "Сағат санын енгізіңіз",
+    "or": "немесе",
+    "localCredits": "Жергілікті кредиттер (Қазақстан)",
+    "localCreditsPlaceholder": "Кредит санын енгізіңіз",
+    "calculateButton": "Есептеу",
+    "resetButton": "Тазарту",
+    "approximateValue": "Шамамен мәні",
+    "whatIsECTS": "ECTS дегеніміз не?",
+    "ectsDescription": "European Credit Transfer and Accumulation System (ECTS) - студенттердің академиялық жетістіктерін салыстыру үшін еуропалық кредиттік жүйе.",
+    "calculationPrinciples": "Есептеу принциптері",
+    "principle1": "1 ECTS = 25-30 академиялық сағат",
+    "principle2": "1 оқу жылы = 60 ECTS",
+    "principle3": "1 семестр = 30 ECTS",
+    "principle4": "Есептеуге дәрістер, семинарлар мен өзіндік жұмыс кіреді",
+    "importantToKnow": "Білу маңызды",
+    "disclaimer": "Бұл калькулятор шамамен мәндерді қамтамасыз етеді. Дәл есептеу үшін орталық мамандарына хабарласыңыз."
   }
 }

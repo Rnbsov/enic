@@ -150,7 +150,28 @@
       "step4": {
         "title": "Submit application",
         "description": "Get a tracking number"
-      }
-    }
+      }    }
+  },
+  "calculator": {
+    "title": "ECTS Calculator",
+    "description": "Convert local academic credits to European Credit Transfer System (ECTS)",
+    "formTitle": "ECTS Calculation",
+    "academicHours": "Academic Hours",
+    "academicHoursPlaceholder": "Enter number of hours",
+    "or": "or",
+    "localCredits": "Local Credits (Kazakhstan)",
+    "localCreditsPlaceholder": "Enter number of credits",
+    "calculateButton": "Calculate",
+    "resetButton": "Reset",
+    "approximateValue": "Approximate value",
+    "whatIsECTS": "What is ECTS?",
+    "ectsDescription": "European Credit Transfer and Accumulation System (ECTS) - a European credit system for comparing academic achievements of students.",
+    "calculationPrinciples": "Calculation Principles",
+    "principle1": "1 ECTS = 25-30 academic hours",
+    "principle2": "1 academic year = 60 ECTS",
+    "principle3": "1 semester = 30 ECTS",
+    "principle4": "Calculation includes lectures, seminars and independent work",
+    "importantToKnow": "Important to Know",
+    "disclaimer": "This calculator provides approximate values. For accurate calculation, please contact center specialists."
   }
 }
