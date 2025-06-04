@@ -4,7 +4,36 @@ import configPromise from '@payload-config'
 
 export async function POST(req: NextRequest) {
   try {
-    const { content, author, category } = await req.json()
+    const { content, author, category, captchaToken } = await req.json()
+
+    // Validate captcha
+    if (!captchaToken) {
+      return NextResponse.json(
+        { errors: [{ message: 'Captcha verification is required' }] },
+        { status: 400 },
+      )
+    }
+
+    // Verify captcha with hCaptcha
+    const captchaResponse = await fetch('https://hcaptcha.com/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        secret: process.env.HCAPTCHA_SECRET || '',
+        response: captchaToken,
+      }),
+    })
+
+    const captchaResult = await captchaResponse.json()
+
+    if (!captchaResult.success) {
+      return NextResponse.json(
+        { errors: [{ message: 'Captcha verification failed' }] },
+        { status: 400 },
+      )
+    }
 
     // Validate input
     if (!content || content.length < 10) {

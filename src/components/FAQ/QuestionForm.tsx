@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useTranslations } from 'next-intl'
-import { User, Mail, MessageSquare, Send, AlertCircle, CheckCircle } from 'lucide-react'
+import { User, Mail, MessageSquare, Send, AlertCircle, CheckCircle, Shield } from 'lucide-react'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 const QuestionForm: React.FC = () => {
   const t = useTranslations('faq')
@@ -16,12 +17,20 @@ const QuestionForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
-
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const captchaRef = useRef<HCaptcha>(null)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError('')
     setSuccess(false)
+
+    // Validate captcha
+    if (!captchaToken) {
+      setError('Please complete the captcha verification.')
+      setIsSubmitting(false)
+      return
+    }
 
     try {
       const res = await fetch('/api/questions', {
@@ -32,6 +41,7 @@ const QuestionForm: React.FC = () => {
         body: JSON.stringify({
           content,
           author: { name, email },
+          captchaToken,
         }),
       })
 
@@ -44,6 +54,10 @@ const QuestionForm: React.FC = () => {
       setContent('')
       setName('')
       setEmail('')
+      setCaptchaToken(null)
+      if (captchaRef.current) {
+        captchaRef.current.resetCaptcha()
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to submit question. Please try again.')
       console.error('Question submission error:', err)
@@ -112,9 +126,27 @@ const QuestionForm: React.FC = () => {
       {success && (
         <div className="flex items-center space-x-2 p-3 bg-green-50 text-green-700 rounded-lg bg-white border border-green-200">
           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-          <p className="text-sm">{t('questionSubmitted')}</p>
+          <p className="text-sm">{t('questionSubmitted')}</p>{' '}
         </div>
       )}
+
+      {/* hCaptcha */}
+      <div className="space-y-2">
+        <Label className="text-gray-700 font-medium flex items-center">
+          <Shield className="w-4 h-4 mr-2 text-brand-blue-500" />
+          Security Verification
+        </Label>
+        <div className="flex justify-center">
+          <HCaptcha
+            ref={captchaRef}
+            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || ''}
+            onVerify={(token) => setCaptchaToken(token)}
+            onExpire={() => setCaptchaToken(null)}
+            onError={() => setCaptchaToken(null)}
+            theme="light"
+          />
+        </div>
+      </div>
 
       <Button
         type="submit"
