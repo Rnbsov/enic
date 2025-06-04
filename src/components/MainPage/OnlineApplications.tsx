@@ -1,12 +1,16 @@
 'use client'
-import React, { useState } from 'react'
-import { FileText, Upload, Clock, CheckCircle, Paperclip, X } from 'lucide-react'
+import React, { useState, useRef } from 'react'
+import { FileText, Upload, Clock, CheckCircle, Paperclip, X, Shield } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Label } from '@/components/ui/label'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 const OnlineApplications = () => {
   const t = useTranslations('applications')
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [selectedApplication, setSelectedApplication] = useState<string | null>(null)
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const captchaRef = useRef<HCaptcha>(null)
 
   const applicationTypes = [
     {
@@ -153,9 +157,26 @@ const OnlineApplications = () => {
                           <X className="w-4 h-4" />
                         </button>
                       </div>
-                    ))}
+                    ))}{' '}
                   </div>
-                )}{' '}
+                )}
+                {/* hCaptcha */}
+                <div className="space-y-2">
+                  <Label className="text-gray-700 font-medium flex items-center">
+                    <Shield className="w-4 h-4 mr-2 text-brand-blue-500" />
+                    Security Verification
+                  </Label>
+                  <div className="flex justify-center">
+                    <HCaptcha
+                      ref={captchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || ''}
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onExpire={() => setCaptchaToken(null)}
+                      onError={() => setCaptchaToken(null)}
+                      theme="light"
+                    />
+                  </div>
+                </div>
                 <button className="w-full mt-6 bg-brand-blue-600 text-white py-3 px-6 rounded-lg hover:bg-brand-blue-700 transition-colors duration-200 font-medium">
                   {t('submitApplication')}
                 </button>
