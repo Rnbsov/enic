@@ -77,9 +77,9 @@ const Navigation = () => {
             >
               <Phone className="w-4 h-4 mr-1" /> +7 (7172) 57-20-75
             </a>
-            <span className="flex items-center">
+            <NextLink href="/admin" className="flex items-center">
               <Mail className="w-4 h-4 mr-1" /> {t('nav.personalAccount')}
-            </span>
+            </NextLink>
           </div>
         </div>
       </div>
