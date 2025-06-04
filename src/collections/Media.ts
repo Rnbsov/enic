@@ -10,12 +10,16 @@ import { fileURLToPath } from 'url'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
+import { adminGroups } from '@/utilities/adminGroups'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  admin: {
+    group: adminGroups.website
+  },
   access: {
     create: authenticated,
     delete: authenticated,

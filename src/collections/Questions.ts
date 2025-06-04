@@ -1,11 +1,13 @@
 import { CollectionConfig } from 'payload'
 import { authenticated } from '../access/authenticated'
+import { adminGroups } from '@/utilities/adminGroups'
 
 export const Questions: CollectionConfig = {
   slug: 'questions',
   admin: {
     defaultColumns: ['content', 'author', 'category', 'answer', 'createdAt'],
     description: 'Questions submitted by visitors for the FAQ section',
+    group: adminGroups.main
   },
   access: {
     read: ({ req }) => {
