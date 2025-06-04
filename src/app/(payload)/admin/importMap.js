@@ -19,8 +19,6 @@ import { HorizontalRuleFeatureClient as HorizontalRuleFeatureClient_e70f5e05f09f
 import { BlocksFeatureClient as BlocksFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { LinkToDoc as LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
-import { RowLabel as RowLabel_ec255a65fa6fa8d1faeb09cf35284224 } from '@/Header/RowLabel'
-import { RowLabel as RowLabel_1f6ff6ff633e3695d348f4f3c58f1466 } from '@/Footer/RowLabel'
 import { Avatar as Avatar_07adee1038f3742e2abdce77023b3353 } from '../../../elements/Avatar'
 import { Nav as Nav_d549f3a4bc46e4cdf72a8774952d71e6 } from '../../../elements/Nav'
 import { Icon as Icon_0160553a72e4abf04e8517b3e9d72343 } from '../../../elements/Logo'
@@ -50,8 +48,6 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#BlocksFeatureClient": BlocksFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/plugin-search/client#LinkToDoc": LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634,
   "@payloadcms/plugin-search/client#ReindexButton": ReindexButton_aead06e4cbf6b2620c5c51c9ab283634,
-  "@/Header/RowLabel#RowLabel": RowLabel_ec255a65fa6fa8d1faeb09cf35284224,
-  "@/Footer/RowLabel#RowLabel": RowLabel_1f6ff6ff633e3695d348f4f3c58f1466,
   "/elements/Avatar#Avatar": Avatar_07adee1038f3742e2abdce77023b3353,
   "/elements/Nav#Nav": Nav_d549f3a4bc46e4cdf72a8774952d71e6,
   "/elements/Logo#Icon": Icon_0160553a72e4abf04e8517b3e9d72343,
