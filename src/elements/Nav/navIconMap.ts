@@ -4,6 +4,7 @@ import {
   LayoutGrid,
   List,
   LucideProps,
+  MailQuestion,
   Network,
   Rocket,
   Smile,
@@ -19,7 +20,7 @@ export const navIconMap: Partial<
 > = {
   categories: List,
   media: Image,
-  employees: User,
+  questions: MailQuestion,
   pages: StickyNote,
   posts: LayoutGrid,
   projects: FileBox,
