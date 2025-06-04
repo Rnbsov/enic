@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const Logo = () => {
   return (
-    <span style={{ position: 'relative', width: '256px', height: '60px' }}>
+    <span style={{ position: 'relative', width: '256px', height: '60px', background: 'white', borderRadius: '10px' }}>
       <Image src="/enic.png" alt="" fill />
     </span>
   )
