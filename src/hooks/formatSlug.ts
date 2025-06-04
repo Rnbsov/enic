@@ -1,10 +1,11 @@
 import type { FieldHook } from 'payload'
+import slugify from 'slugify'
 
-const format = (val: string): string =>
-  val
-    .replace(/ /g, '-')
-    .replace(/[^\w-]+/g, '')
-    .toLowerCase()
+export const format = (val: string): string =>
+  slugify(val, {
+    replacement: '-',
+    strict: true, // Removes non-alphanumeric characters except dashes
+  })
 
 const formatSlug =
   (fallback: string): FieldHook =>

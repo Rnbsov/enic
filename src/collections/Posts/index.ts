@@ -91,10 +91,7 @@ export const Posts: CollectionConfig<'posts'> = {
       type: 'tabs',
       tabs: [
         {
-          label: {
-            en: 'Content',
-            ru: 'Содержание',
-          },
+          label: 'Content',
           fields: [
             {
               name: 'heroImage',
@@ -126,10 +123,7 @@ export const Posts: CollectionConfig<'posts'> = {
           ],
         },
         {
-          label: {
-            en: 'Meta',
-            ru: 'Мета',
-          },
+          label: 'Meta',
           fields: [
             {
               name: 'relatedPosts',
@@ -168,10 +162,7 @@ export const Posts: CollectionConfig<'posts'> = {
         },
         {
           name: 'meta',
-          label: {
-            en: 'SEO',
-            ru: 'SEO',
-          },
+          label: 'SEO',
           fields: [
             OverviewField({
               titlePath: 'meta.title',
