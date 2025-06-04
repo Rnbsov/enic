@@ -10,13 +10,9 @@ export default function BolognaPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">{t('pageTitle')}</h1>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-gray-600 mb-6">
-              {t('description')}
-            </p>
+            <p className="text-lg text-gray-600 mb-6">{t('description')}</p>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-              {t('goalsTitle')}
-            </h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('goalsTitle')}</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
               <li>{t('goals.quality')}</li>
               <li>{t('goals.mobility')}</li>
@@ -25,10 +21,10 @@ export default function BolognaPage() {
               <li>{t('goals.attractiveness')}</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('participationTitle')}</h2>
-            <p className="text-gray-600 mb-6">
-              {t('participationText')}
-            </p>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              {t('participationTitle')}
+            </h2>
+            <p className="text-gray-600 mb-6">{t('participationText')}</p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('toolsTitle')}</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">

@@ -10,14 +10,10 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">{t('pageTitle')}</h1>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-gray-600 mb-6">
-              {t('description')}
-            </p>
+            <p className="text-lg text-gray-600 mb-6">{t('description')}</p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('missionTitle')}</h2>
-            <p className="text-gray-600 mb-6">
-              {t('missionText')}
-            </p>
+            <p className="text-gray-600 mb-6">{t('missionText')}</p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
               {t('activitiesTitle')}

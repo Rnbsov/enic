@@ -208,7 +208,8 @@
     "principle4": "Calculation includes lectures, seminars and independent work",
     "importantToKnow": "Important to Know",
     "disclaimer": "This calculator provides approximate values. For accurate calculation, please contact center specialists."
-  },  "serviceCard": {
+  },
+  "serviceCard": {
     "readMore": "Read More",
     "popular": "★ Popular"
   },
@@ -226,7 +227,8 @@
       "research": "Conducting scientific research in higher education",
       "cooperation": "International cooperation in education"
     }
-  },  "registry": {
+  },
+  "registry": {
     "pageTitle": "Registry of Educational Programs",
     "description": "Official registry of accredited higher and postgraduate educational programs of the Republic of Kazakhstan.",
     "purposeTitle": "Registry Purpose",
