@@ -104,7 +104,7 @@ export interface Config {
   };
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'ru' | 'kz' | 'en';
   user: User & {
     collection: 'users';
   };
@@ -237,6 +237,9 @@ export interface Post {
     description?: string | null;
   };
   publishedAt?: string | null;
+  /**
+   * Authors of this post
+   */
   authors?: (number | User)[] | null;
   populatedAuthors?:
     | {

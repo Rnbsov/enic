@@ -30,6 +30,16 @@ import { adminGroups } from '@/utilities/adminGroups'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
+  labels: {
+    singular: {
+      en: 'Post',
+      ru: 'Пост',
+    },
+    plural: {
+      en: 'Posts',
+      ru: 'Посты',
+    },
+  },
   access: {
     create: authenticated,
     delete: authenticated,
@@ -75,11 +85,16 @@ export const Posts: CollectionConfig<'posts'> = {
       name: 'title',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       type: 'tabs',
       tabs: [
         {
+          label: {
+            en: 'Content',
+            ru: 'Содержание',
+          },
           fields: [
             {
               name: 'heroImage',
@@ -101,13 +116,20 @@ export const Posts: CollectionConfig<'posts'> = {
                   ]
                 },
               }),
-              label: false,
+              label: {
+                en: 'Content',
+                ru: 'Содержание',
+              },
               required: true,
+              localized: true,
             },
           ],
-          label: 'Content',
         },
         {
+          label: {
+            en: 'Meta',
+            ru: 'Мета',
+          },
           fields: [
             {
               name: 'relatedPosts',
@@ -124,6 +146,10 @@ export const Posts: CollectionConfig<'posts'> = {
               },
               hasMany: true,
               relationTo: 'posts',
+              label: {
+                en: 'Related Posts',
+                ru: 'Связанные записи',
+              },
             },
             {
               name: 'categories',
@@ -133,13 +159,19 @@ export const Posts: CollectionConfig<'posts'> = {
               },
               hasMany: true,
               relationTo: 'categories',
+              label: {
+                en: 'Categories',
+                ru: 'Категории',
+              },
             },
           ],
-          label: 'Meta',
         },
         {
           name: 'meta',
-          label: 'SEO',
+          label: {
+            en: 'SEO',
+            ru: 'SEO',
+          },
           fields: [
             OverviewField({
               titlePath: 'meta.title',
@@ -175,6 +207,10 @@ export const Posts: CollectionConfig<'posts'> = {
         },
         position: 'sidebar',
       },
+      label: {
+        en: 'Published At',
+        ru: 'Опубликовано',
+      },
       hooks: {
         beforeChange: [
           ({ siblingData, value }) => {
@@ -191,9 +227,17 @@ export const Posts: CollectionConfig<'posts'> = {
       type: 'relationship',
       admin: {
         position: 'sidebar',
+        description: {
+          en: 'Authors of this post',
+          ru: 'Авторы этой записи',
+        },
       },
       hasMany: true,
       relationTo: 'users',
+      label: {
+        en: 'Authors',
+        ru: 'Авторы',
+      },
     },
     // This field is only used to populate the user data via the `populateAuthors` hook
     // This is because the `user` collection has access control locked to protect user privacy
