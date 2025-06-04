@@ -161,7 +161,7 @@ const OnlineApplications = () => {
                   </div>
                 )}
                 {/* hCaptcha */}
-                <div className="space-y-2">
+                <div className="space-y-2 mt-5">
                   <Label className="text-gray-700 font-medium flex items-center">
                     <Shield className="w-4 h-4 mr-2 text-brand-blue-500" />
                     Security Verification
