@@ -14,11 +14,24 @@ import { Questions } from './collections/Questions'
 import { Users } from './collections/Users'
 import { plugins } from './plugins'
 import { getServerSideURL } from './utilities/getURL'
+import { en } from '@payloadcms/translations/languages/en'
+import { ru } from '@payloadcms/translations/languages/ru'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  localization: {
+      locales: [
+        { label: 'Edit Russian', code: 'ru' },
+        { label: 'Edit Kazakh', code: 'kz' },
+        { label: 'Edit English', code: 'en' },
+      ],
+      defaultLocale: 'ru',
+    },
+    i18n: {
+      supportedLanguages: { ru, en },
+    },
   admin: {
     components: {
       views: {
