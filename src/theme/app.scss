@@ -150,12 +150,17 @@
       height: auto;
     }
   }
+
+  .localizer {
+    right: 190px !important;
+  }
 }
 
 .dashboard__group:first-child {
   display: none;
 }
 
-#nav-group-Collections {
+#nav-group-Collections,
+#nav-group-Коллекции {
   display: none;
 }
